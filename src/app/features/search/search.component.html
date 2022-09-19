@@ -1,0 +1,66 @@
+<div class="wrapper three-cols">
+  <!--SIDEBAR-->
+  <itk-card [isScrollable]="true" customClass="side-bar" title="Search">
+      <itk-hotel-form [form]="form"
+      (searchHotels)="searchHotels($event)"></itk-hotel-form>
+
+      <itk-separator></itk-separator>
+
+      <itk-hotel-list
+      [hotels]="hotels"
+      [active]="active"
+      [text]="text"
+      (setActive)="setActive($event)"
+      ></itk-hotel-list>
+  </itk-card>
+
+  <itk-card customClass="map" [cardPadding]="false">
+    <itk-map
+    [active]="active"></itk-map>
+  </itk-card>
+
+  <!--INFO BOX-->
+  <itk-card [isCentered]="true" >
+
+      <itk-separator></itk-separator>
+      <itk-rates
+      [active]="active"></itk-rates>
+      <itk-stars
+      [active]="active"></itk-stars>
+      <br>
+      <itk-reservation
+      [active]="active"
+      (addToCart)="cart.addToCart(active, $event)"></itk-reservation>
+
+  </itk-card>
+  <!--IMAGE GALLERY-->
+  <itk-card customClass="gallery" [isScrollable]="true" [cardPadding]="false">
+    <itk-gallery
+    [active]="active"
+    [activeImage]="activeImage"></itk-gallery>
+  </itk-card>
+
+
+  <!--SERVICES-->
+  <itk-card title="Services">
+    <itk-services
+    [services]="active?.services"></itk-services>
+
+  </itk-card>
+
+  <itk-card title="Review" >
+    <itk-reviews
+    (hoverStar)="onHoverStar($event)"
+    (starLeave)="onStarLeave()"
+    (setRating)="onSetRating($event)"
+    [review]="review"
+    (sendReview)="sendReview($event)"
+
+    [starId]="stars"
+    [rating]="hover || rating">
+
+    </itk-reviews>
+  </itk-card>
+
+
+</div>

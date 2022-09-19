@@ -1,0 +1,84 @@
+@import url(./shared.scss);
+@import url(./search.component.scss);
+
+
+html{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #3D2A44;
+  margin: 0;
+}
+
+.nav-container {
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container .logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.routes{
+  display: flex;
+
+}
+.nav-item{
+  margin: 0 5px;
+}
+
+
+  .icon {
+    font-size: 40px
+
+  }
+  .small-icon{
+    cursor: pointer;
+    font-size: 25px
+  }
+
+  .font-superbig {
+    font-size: 45px;
+    font-weight: 300;
+  }
+
+  .font-big {
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  .font-small{
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .font-medium {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+
+.background-disabled{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.36);
+  z-index: 100;
+}
+
+.error{
+  background-color: rgba(180, 1, 1, 0.4);
+
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 5px;
+  color: rgb(180, 1, 1);
+  margin-bottom: 2px;
+}

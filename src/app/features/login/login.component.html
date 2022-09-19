@@ -1,0 +1,12 @@
+<div class="wrapper centered">
+  <div class="card vh-centered">
+    <div class="title">Login</div>
+    <div class="content">
+      <form [formGroup]="login" (submit)="auth.login(login.value)" >
+        <input type="text" formControlName="user" name="user" id="user"  placeholder="Username">
+        <input type="password" formControlName="pass" name="pass" id="pass" placeholder="Password">
+        <button type="submit" [disabled]="login.invalid">Sign-in</button>
+      </form>
+    </div>
+  </div>
+</div>

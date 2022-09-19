@@ -1,0 +1,123 @@
+
+.side-bar {
+  grid-row: 1/3;
+}
+
+.map {
+  grid-column: 2/4;
+}
+
+.map .address {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+input[type=text],
+input[type=password],
+textarea, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+input[type=text].error,
+input[type=password].error,
+textarea.error, select.error  {
+  background-color: lightcoral;
+  color: white;
+}
+
+button[type=submit] {
+  width: 100%;
+  background-color: #00AE76;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/** LAYOUT GRID */
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  margin: 20px;
+}
+
+.wrapper.three-cols {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(300px, auto);
+  height: 90vh;
+}
+
+.wrapper.centered {
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-auto-columns: minmax(500px, auto);*/
+  height: 90vh;
+}
+
+
+.wrapper.centered > .vh-centered {
+  grid-row: 2/2;
+  grid-column: 2/2;
+}
+
+/** NESTED GRID 3 x ?? **/
+
+.nested {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nested > div {
+  padding: 10px;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .wrapper { display: block; }
+}
+
+
+/** HORIZ FLEXBOX GRID */
+
+.horiz-grid {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+  transition: .3s padding-left;
+}
+
+.horiz-grid.separator {
+  border-bottom: 1px solid #ccc;
+}
+
+.horiz-grid.active {
+  padding-left: 10px;
+  color: #00AE76;
+  font-weight: 600;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .horiz-grid {
+    flex-direction: column;
+  }
+}
